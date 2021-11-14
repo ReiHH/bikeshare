@@ -150,9 +150,14 @@ def trip_duration_stats(df):
     print('The total travel time in hours is: {}'.format(total_t_time))
 
     # display mean travel time
-    mean_travel_time = df['Trip Duration'].mean() / 60
-    print('The mean of the travel time (in minutes) is: {}'.format(mean_travel_time))   
-
+    mean_t_time = df['Trip Duration'].mean() / 60
+    print('The mean of the travel time (in minutes) is: {}'.format(mean_t_time))   
+    
+    # display the total trip duration in hours for each user type
+    usertype_trip = df.groupby(['User Type']).sum()['Trip Duration'] /3600
+    for index, user_trip in enumerate(usertype_trip):
+        print(" User Type {}: Total time traveled {} hours".format(usertype_trip.index[index], user_trip))
+        
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
