@@ -150,8 +150,8 @@ def trip_duration_stats(df):
     print('The total travel time in hours is: {}'.format(total_t_time))
 
     # display mean travel time
-    mean_travel_time = df['Trip Duration'].mean() / 60
-    print('The mean of the travel time (in minutes) is: {}'.format(mean_travel_time))   
+    mean_t_time = df['Trip Duration'].mean() / 60
+    print('The mean of the travel time (in minutes) is: {}'.format(mean_t_time))   
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
