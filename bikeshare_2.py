@@ -91,7 +91,7 @@ def load_data(city, month, day):
     if day != 'all':
 
         # filter by day of week to create the new dataframe
-        df = df[df['day_of_week'] == day.title()] # hier ggf. noch day of week ergänzen auf Day
+        df = df[df['day_of_week'] == day.title()]
     return df
 
 def time_stats(df):
@@ -200,7 +200,7 @@ def user_stats(df):
     print('-'*40)
 
 def raw_data(df):
-    # displays raw data 
+    """displays raw data""" 
 
     # remove added columns from visualization to turn back to raw data
     df = df.drop(['month','hour', 'day_of_week'], axis = 1)
